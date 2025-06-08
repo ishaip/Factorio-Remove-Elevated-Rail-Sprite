@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2025-06-08
+  Features:
+    - Elevated rail transparency is now always active (no toggle needed)
+    - Configurable transparency settings (0.0 to 1.0)
+    - Real-time transparency application for newly built elevated rails
+    - Automatic cleanup of invalid overlays
+  Changes:
+    - Removed shortcut button - transparency is automatically applied
+  Info:
+    - Compatible with Factorio 2.0+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 2025-06-08
   Features:
