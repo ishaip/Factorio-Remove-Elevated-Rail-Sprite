@@ -1,0 +1,11 @@
+{
+  "name": "factorio-elevated-rail-transparency",
+  "version": "1.0.0",
+  "title": "Elevated Rail Transparency",
+  "author": "Ishai Picus",
+  "description": "Toggle elevated rail transparency with a button",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0"],
+  "license": "CC BY-NC 4.0",
+  "homepage": "https://github.com/ishaipicus/Factorio-Remove-Elevated-Rail-Sprite"
+}
