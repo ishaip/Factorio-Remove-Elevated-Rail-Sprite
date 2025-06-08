@@ -1,9 +1,9 @@
 {
   "name": "factorio-elevated-rail-transparency",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "title": "Elevated Rail Transparency",
   "author": "Ishai Picus",
-  "description": "Toggle elevated rail transparency with a button",
+  "description": "Toggle elevated rail transparency with a button to see underneath elevated rails while maintaining functionality",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0"],
   "license": "CC BY-NC 4.0",

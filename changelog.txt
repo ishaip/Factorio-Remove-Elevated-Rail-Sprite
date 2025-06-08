@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2025-06-08
+  Features:
+    - Initial release of Elevated Rail Transparency mod
+    - Added toggle shortcut for elevated rail transparency
+    - Added configurable transparency settings (0.0 to 1.0)
+    - Added real-time transparency application for newly built elevated rails
+    - Added automatic cleanup of invalid overlays
+  Info:
+    - Compatible with Factorio 2.0+
+    - Uses rendering overlays for transparency effect
