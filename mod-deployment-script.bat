@@ -41,25 +41,49 @@ REM Display found values for confirmation
 echo Found mod name: !modname!
 echo Found version: !version!
 
-set input=.
-set output=!modname!_!version!
+set foldername=!modname!_!version!
+set zipname=!foldername!.zip
 set target=%appdata%\Factorio\mods
 
-REM Ensure output ends with .zip
-set zipname=!output!
-if /I not "!zipname:~-4!"==".zip" set zipname=!zipname!.zip
-
-REM Remove output zip if it already exists in current directory
+REM Remove existing folder and zip if they exist
+if exist "!foldername!" rmdir /s /q "!foldername!"
 if exist "!zipname!" del /f /q "!zipname!"
 
-echo Creating mod archive: !zipname!
+echo Creating mod folder: !foldername!
 
-REM Create zip archive excluding .gitignore and deployment script
-powershell -Command "Get-ChildItem -Path '.' -Recurse | Where-Object { $_.Name -ne '.gitignore' -and $_.Name -ne 'mod-deployment-script.bat' } | Compress-Archive -DestinationPath '!zipname!' -Force"
+REM Create the mod folder
+mkdir "!foldername!"
+
+REM Copy all files except .gitignore, .git folder, and deployment script
+echo Copying files to mod folder...
+for /f "delims=" %%i in ('dir /b /a-d') do (
+    if /I not "%%i"==".gitignore" (
+        if /I not "%%i"=="mod-deployment-script.bat" (
+            copy "%%i" "!foldername!\" >nul
+        )
+    )
+)
+
+REM Copy all directories except .git and existing mod folders
+for /f "delims=" %%i in ('dir /b /ad') do (
+    if /I not "%%i"==".git" (
+        if /I not "%%i"=="!foldername!" (
+            xcopy "%%i" "!foldername!\%%i\" /e /i /q >nul
+        )
+    )
+)
+
+echo Creating zip archive: !zipname!
+
+REM Create zip archive from the folder
+powershell -Command "Compress-Archive -Path '!foldername!' -DestinationPath '!zipname!' -Force"
 
 REM Copy zip to target directory, overwrite if exists
-copy /Y "!zipname!" "%target%\!zipname!"
+copy /Y "!zipname!" "!target!\!zipname!"
 
-echo Deployment complete: !zipname! copied to %target%
+REM Clean up - remove the temporary folder
+rmdir /s /q "!foldername!"
+
+echo Deployment complete: !zipname! copied to !target!
 pause
 endlocal

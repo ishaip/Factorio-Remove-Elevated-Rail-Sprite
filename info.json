@@ -1,9 +1,9 @@
 {
-  "name": "factorio-invisible-stone-furnaces",
-  "version": "0.2.0",
-  "title": "Invisible Stone Furnaces",
+  "name": "see-through-rails",
+  "version": "0.1.0",
+  "title": "See Through Rails",
   "author": "Ishai Picus",
-  "description": "Makes stone furnaces invisible while maintaining full functionality for smelting and automation",
+  "description": "Makes railway infrastructure more transparent for better visibility",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0"],
   "license": "CC BY-NC 4.0",
