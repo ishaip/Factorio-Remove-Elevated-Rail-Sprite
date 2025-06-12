@@ -1,22 +1,24 @@
-# Elevated Rail Transparency
+# Invisible Stone Furnaces
 
 ## Overview
-This Factorio mod allows players to toggle the transparency of elevated rails with the press of a button. When enabled, elevated rails become more transparent, making it easier to see what's underneath them while maintaining their functionality.
+This Factorio mod makes stone furnaces completely invisible while maintaining their full functionality. You can still interact with them, automate them with inserters, and they will continue smelting normally - they just won't clutter your visual space anymore.
 
 ## Features
-- **One-click toggle**: Use the shortcut button in the toolbar to instantly toggle elevated rail transparency
-- **Customizable transparency**: Adjust the transparency level in mod settings (0.0 = invisible, 1.0 = opaque)
-- **Per-player setting**: Each player can toggle transparency independently in multiplayer
-- **Visual feedback**: Chat messages confirm when transparency is enabled or disabled
+- **Complete stone furnace invisibility**: Stone furnaces become invisible
+- **Full functionality preserved**: Smelting, automation, and interaction remain unchanged
+- **Mod compatibility**: Works with other furnace and smelting mods
+- **Performance optimized**: Uses data-stage modifications for minimal runtime impact
+- **Optional settings**: Toggle functionality and hover visibility
 
 ## Usage
 1. Install the mod
-2. Look for the rail icon shortcut button in your toolbar
-3. Click the button to toggle elevated rail transparency on/off
-4. Adjust transparency level in Settings > Mod Settings > Runtime (Global)
+2. All stone furnaces will automatically become invisible
+3. Furnaces still function normally - you can click where they are to interact
+4. Use mod settings to customize behavior if needed
 
 ## Settings
-- **Rail Transparency Level**: Controls how transparent elevated rails become (default: 0.3)
+- **Enable Invisible Stone Furnaces**: Toggle the invisibility effect on/off (default: enabled)
+- **Show Furnaces on Hover**: Show furnace outlines when hovering (default: disabled, requires restart)
 
 ## Requirements
 - Factorio 2.0+
@@ -29,11 +31,34 @@ This Factorio mod allows players to toggle the transparency of elevated rails wi
    - Linux: `~/.factorio/mods`
 3. Launch Factorio and enable the mod in the mod settings menu
 
-## Configuration
-- The transparency percentage can be adjusted in the mod settings. Look for "Rail Transparency Level" to set your desired level of transparency (0.0 = invisible, 1.0 = opaque)
+## How It Works
+The mod modifies stone furnace prototypes during Factorio's data stage to replace all visual sprites with empty/transparent sprites while preserving:
+- Collision boxes (so you can still click on them)
+- Selection boxes (so you can still select them)
+- All functional properties (smelting recipes, energy consumption, etc.)
+- Inserter connection points
+- Mod compatibility
+
+This approach is very performance-friendly since it doesn't require any runtime scripting for the basic invisibility effect.
 
 ## Compatibility
-This mod is designed to work with the latest version of Factorio. Ensure that your game is updated to the latest version for optimal performance.
+- Works with all stone furnace interactions
+- Compatible with inserter and belt automation
+- Works with other furnace enhancement mods
+- No conflicts with smelting or logistics mods
+- Performance friendly - no runtime scripting for basic invisibility
+
+## Troubleshooting
+- If furnaces appear visible, check that the mod setting "Enable Invisible Stone Furnaces" is turned on
+- Some modded furnace interactions might require a game restart after installation
+- Use the `/toggle-furnace-visibility` command for debugging
+- Remember that furnaces are still there even if invisible - you can click on their location
+
+## Use Cases
+- Clean factory aesthetics without losing functionality
+- Reducing visual clutter in dense smelting setups
+- Creating "hidden" smelting operations
+- Better screenshots and videos of your factory
 
 ## Acknowledgments
 Thanks to the Factorio community for their support and feedback during the development of this mod. Enjoy your enhanced factory experience!

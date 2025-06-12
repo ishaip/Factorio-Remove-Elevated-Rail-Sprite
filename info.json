@@ -1,9 +1,9 @@
 {
-  "name": "factorio-elevated-rail-transparency",
-  "version": "0.1.0",
-  "title": "Elevated Rail Transparency",
+  "name": "factorio-invisible-stone-furnaces",
+  "version": "0.2.0",
+  "title": "Invisible Stone Furnaces",
   "author": "Ishai Picus",
-  "description": "Toggle elevated rail transparency with a button to see underneath elevated rails while maintaining functionality",
+  "description": "Makes stone furnaces invisible while maintaining full functionality for smelting and automation",
   "factorio_version": "2.0",
   "dependencies": ["base >= 2.0"],
   "license": "CC BY-NC 4.0",

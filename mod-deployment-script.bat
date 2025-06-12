@@ -6,9 +6,11 @@ REM input  - folder or file to zip
 REM output - name of the zip file (with or without .zip extension)
 REM target - directory to copy the zip file to
 
-REM Read version from changelog.txt
+REM Read version from changelog.txt (first occurrence only)
 set version=
-for /f "tokens=2" %%a in ('findstr /r "^Version:" changelog.txt 2^>nul') do set version=%%a
+for /f "tokens=2" %%a in ('findstr /r "^Version:" changelog.txt 2^>nul') do (
+    if "!version!"=="" set version=%%a
+)
 
 REM Check if version was found
 if "!version!"=="" (

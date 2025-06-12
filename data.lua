@@ -1,1 +1,1 @@
-require("prototypes.shortcuts")
+-- No additional prototypes needed
